@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { background: #f8f3ff; }
+
+.app { max-width: 900px; margin: 40px auto; font-family: 'Nunito', sans-serif; padding: 0 20px; }
+
+h1 { text-align: center; margin-bottom: 30px; font-size: 38px; background: linear-gradient(135deg, #16537e, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Comfortaa', cursive; }
+
+.search-bar {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background: #cfe2f3;
+  color: #111;
+}
+
+.note-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; background: #eeeeee; padding: 20px; border-radius: 10px; }
+
+.note-form input, .note-form textarea {
+  padding: 10px; border: 1px solid #d0e0e3; border-radius: 6px; font-size: 16px;
+  background: #cfe2f3;
+  color: #111;
+}
+
+.note-form textarea { height: 80px; resize: none; }
+
+.note-form button {
+  padding: 10px; background: #3d85c6; color: white;
+  border: none; border-radius: 6px; cursor: pointer; font-size: 16px;
+}
+
+.note-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.note-card {
+  border-radius: 4px;
+  padding: 1.2rem 1rem 1rem;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.note-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 0 0 24px 24px;
+}
+
+.note-card.yellow { background: #FFF176; }
+.note-card.yellow::after { border-color: transparent transparent #F9A825 transparent; }
+
+.note-card.green { background: #CCFF90; }
+.note-card.green::after { border-color: transparent transparent #69F0AE transparent; }
+
+.note-card.pink { background: #F48FB1; }
+.note-card.pink::after { border-color: transparent transparent #E91E8C transparent; }
+
+.note-card.blue { background: #80DEEA; }
+.note-card.blue::after { border-color: transparent transparent #00ACC1 transparent; }
+
+.note-card h3 { font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px; }
+
+.note-card p { font-size: 13px; color: #444; flex: 1; line-height: 1.5; margin-bottom: 12px; }
+
+.note-card.pinned { border: 2px solid #4f46e5; }
+
+.pin-badge {
+  font-size: 11px; font-weight: 600;
+  color: #4f46e5; margin-bottom: 6px; display: block;
+}
+
+.card-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.note-card button {
+  background: #ef4444; color: white; border: none;
+  border-radius: 4px; padding: 5px 12px;
+  font-size: 12px; cursor: pointer;
+}
+
+.edit-btn { background: #3d85c6 !important; }
+.pin-btn { background: #e69138 !important; }
+.save-btn { background: #8fce00 !important; }
+
+.edit-input {
+  width: 100%; padding: 6px; margin-bottom: 8px;
+  border: none; border-radius: 4px; font-size: 14px; font-weight: 600;
+}
+
+.edit-textarea {
+  width: 100%; padding: 6px; margin-bottom: 8px;
+  border: none; border-radius: 4px; font-size: 13px;
+  resize: none; height: 70px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .app { margin: 20px auto; padding: 0 15px; }
+  h1 { font-size: 30px; margin-bottom: 20px; }
+  .note-list { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .app { margin: 15px auto; padding: 0 10px; }
+  h1 { font-size: 26px; margin-bottom: 15px; }
+  .note-list { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .note-form { padding: 15px; }
+  .note-form button { font-size: 14px; }
+  .note-card { min-height: 140px; padding: 1rem 0.8rem; }
+  .note-card h3 { font-size: 13px; }
+  .note-card p { font-size: 12px; }
+  .card-buttons { gap: 5px; }
+  .note-card button { padding: 4px 8px; font-size: 11px; }
+}
